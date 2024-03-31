@@ -8,8 +8,10 @@ public class MainWindow {
     private JTextPane textBefore;
     private JTextPane textAfter;
     private JPanel mainPanel;
+    private JLabel cipherKey;
 
     MainWindow(){
+        mainFrame.setTitle("JavaRush. Module One");
         textAfter.setEditable(false);
         textBefore.setEditable(false);
         mainFrame.add(mainPanel);
