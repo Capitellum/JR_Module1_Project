@@ -15,7 +15,8 @@ public class MainWindow {
         buttonFileOpen.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Main.gui.setPanel(new fileOpenWindow().openFilePanel);
+                //Main.gui.setPanel(new fileOpenWindow().openFilePanel);
+                int fileChooserVal = new fileOpenWindow().fileChooser.showOpenDialog(mainPanel);
             }
         });
     }
