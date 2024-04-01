@@ -1,5 +1,7 @@
 public class Main {
-    public static void main(String[] args) {
-        new MainWindow();
+
+    static ControllerGUI gui = new ControllerGUI();
+    public static void main(String[] args){
+
     }
 }

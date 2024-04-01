@@ -1,22 +1,24 @@
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class MainWindow {
-    JFrame mainFrame = new JFrame();
-    private JButton buttonOpenFile;
     private JButton buttonDecipher;
     private JButton buttonCipher;
     private JTextPane textBefore;
     private JTextPane textAfter;
-    private JPanel mainPanel;
+    public JPanel mainPanel;
     private JLabel cipherKey;
+    private JButton buttonFileOpen;
 
-    MainWindow(){
-        mainFrame.setTitle("JavaRush. Module One");
-        textAfter.setEditable(false);
-        textBefore.setEditable(false);
-        mainFrame.add(mainPanel);
-        mainFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        mainFrame.setSize(800,600);
-        mainFrame.setVisible(true);
+    public MainWindow() {
+        buttonFileOpen.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Main.gui.setPanel(new fileOpenWindow().openFilePanel);
+            }
+        });
     }
+
+
 }
