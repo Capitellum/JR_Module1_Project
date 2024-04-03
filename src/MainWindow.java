@@ -14,16 +14,17 @@ public class MainWindow {
     private JScrollPane textAfterScroll;
     private JTextPane textBefore;
     private JTextPane textAfter;
+    private JFileChooser fileChooser;
 
     public MainWindow() {
 
         buttonFileOpen.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                fileOpenWindow fileOpenWindow = new fileOpenWindow();
-                int fileChooserVal = fileOpenWindow.fileChooser.showOpenDialog(mainPanel);
+                fileChooser = new JFileChooser();
+                int fileChooserVal = fileChooser.showOpenDialog(mainPanel);
                 if (fileChooserVal == JFileChooser.APPROVE_OPTION) {
-                    File file = fileOpenWindow.fileChooser.getSelectedFile();
+                    File file = fileChooser.getSelectedFile();
                     try {
                         BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
                         ArrayList<String> arrayList = new ArrayList<>();

@@ -3,7 +3,6 @@ import javax.swing.*;
 public class ControllerGUI extends JFrame {
 
     MainWindow mainWindow = new MainWindow();
-    fileOpenWindow fileOpenWindow = new fileOpenWindow();
     ControllerGUI(){
         initialisation();
     }
