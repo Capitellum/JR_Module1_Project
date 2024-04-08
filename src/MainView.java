@@ -1,7 +1,6 @@
 import javax.swing.*;
 import java.io.*;
 import java.nio.file.Files;
-import java.nio.file.LinkOption;
 import java.nio.file.Path;
 import java.util.ArrayList;
 
@@ -36,6 +35,32 @@ public class MainView {
                 case JFileChooser.CANCEL_OPTION -> {textBefore.setText("File wasn't chosen");}
                 case JFileChooser.ERROR_OPTION -> {textBefore.setText("Error occurred during file opening");}
 
+            }
+        });
+        buttonCipher.addActionListener(e -> {
+            if (!textBefore.getText().isEmpty()) {
+
+                    char[] charArray = textBefore.getText().toCharArray();
+                    for (int i = 0; i < charArray.length; i++) {
+                        char tempChar = charArray[i];
+                        tempChar = (char)(tempChar+1);
+                        charArray[i] = tempChar;
+
+                    }
+                    textAfter.setText(String.valueOf(charArray));
+                }
+        });
+        buttonDecipher.addActionListener(e -> {
+            if (!textAfter.getText().isEmpty()) {
+
+                char[] charArray = textAfter.getText().toCharArray();
+                for (int i = 0; i < charArray.length; i++) {
+                    char tempChar = charArray[i];
+                    tempChar = (char)(tempChar-1);
+                    charArray[i] = tempChar;
+
+                }
+                textAfter.setText(String.valueOf(charArray));
             }
         });
     }
