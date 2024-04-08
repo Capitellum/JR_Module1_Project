@@ -2,13 +2,13 @@ import javax.swing.*;
 
 public class ControllerGUI extends JFrame {
 
-    MainWindow mainWindow = new MainWindow();
+    MainView mainView = new MainView();
     ControllerGUI(){
         initialisation();
     }
 
     private void initialisation() {
-        setPanel(mainWindow.mainPanel);
+        setPanel(mainView.mainPanel);
         this.setTitle("JavaRush. Module One");
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setSize(800,600);
